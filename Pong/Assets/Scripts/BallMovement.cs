@@ -7,10 +7,17 @@ public class BallMovement : MonoBehaviour
 {
     [SerializeField]
     private float speed = 10;
+    [SerializeField]
+    private AudioClip audioClipRacket;
+    [SerializeField]
+    private AudioClip audioClipWall;
+    private AudioSource audioSource;
     public Rigidbody2D rb;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         LaunchBall();
     }
 
@@ -29,12 +36,25 @@ public class BallMovement : MonoBehaviour
             float verticalDirection = Mathf.Sign(relativePosition);
             float horizontalDirection = Mathf.Sign(rb.velocity.x);
 
+            HitRacketSFX();
+
             rb.velocity = new Vector2(horizontalDirection * speed * 0.8f, verticalDirection * speed * 0.8f);
         }
         else
         {
             Vector2 normal = collision.GetContact(0).normal;
+            HitWallSFX();
             rb.velocity = Vector2.Reflect(rb.velocity, normal).normalized * speed * 1.2f;
         }
+    }
+
+    private void HitRacketSFX()
+    {
+        audioSource.PlayOneShot(audioClipRacket);
+    }
+
+    private void HitWallSFX()
+    {
+        audioSource.PlayOneShot(audioClipWall);
     }
 }

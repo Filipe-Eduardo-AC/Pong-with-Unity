@@ -12,7 +12,9 @@ public class BallMovement : MonoBehaviour
     [SerializeField]
     private AudioClip audioClipWall;
     private AudioSource audioSource;
+    private bool hasCollided = false;
     public Rigidbody2D rb;
+
 
     private void Start()
     {
@@ -30,21 +32,39 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!hasCollided)
         {
-            float relativePosition = transform.position.y - collision.transform.position.y;
-            float verticalDirection = Mathf.Sign(relativePosition);
-            float horizontalDirection = Mathf.Sign(rb.velocity.x);
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                float relativePosition = transform.position.y - collision.transform.position.y;
+                float verticalDirection = Mathf.Sign(relativePosition);
+                float horizontalDirection = Mathf.Sign(rb.velocity.x);
 
-            HitRacketSFX();
+                HitRacketSFX();
 
-            rb.velocity = new Vector2(horizontalDirection * speed * 0.8f, verticalDirection * speed * 0.8f);
+                Vector2 force = new Vector2(horizontalDirection, verticalDirection) * speed * 0.8f;
+                rb.AddForce(force, ForceMode2D.Impulse);
+            }
+            else
+            {
+                Vector2 normal = collision.GetContact(0).normal;
+                HitWallSFX();
+                Vector2 reflectedVelocity = Vector2.Reflect(rb.velocity, normal).normalized;
+                rb.velocity = reflectedVelocity * speed;
+            }
+
+            hasCollided = true;
         }
         else
         {
-            Vector2 normal = collision.GetContact(0).normal;
-            HitWallSFX();
-            rb.velocity = Vector2.Reflect(rb.velocity, normal).normalized * speed * 1.2f;
+            if (collision.gameObject.CompareTag("Player"))
+            {                
+                HitRacketSFX();
+            }
+            else
+            {
+                HitWallSFX();
+            }
         }
     }
 

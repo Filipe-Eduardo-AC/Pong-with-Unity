@@ -886,6 +886,7 @@ GameObject:
   - component: {fileID: 1518091487}
   - component: {fileID: 1518091486}
   - component: {fileID: 1518091485}
+  - component: {fileID: 1518091489}
   - component: {fileID: 1518091488}
   m_Layer: 0
   m_Name: Ball
@@ -976,8 +977,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  audioClipRacket: {fileID: 8300000, guid: 056eca84cf4992f4f9bd6438d03bd3ff, type: 3}
-  audioClipWall: {fileID: 8300000, guid: 7a7a0f84ce0cb4540ab2657ef665afa8, type: 3}
   rb: {fileID: 1518091487}
 --- !u!61 &1518091486
 BoxCollider2D:
@@ -1149,6 +1148,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1518091489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518091482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca688d5f4e5ec641b69e4704ee09dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClipRacket: {fileID: 8300000, guid: 056eca84cf4992f4f9bd6438d03bd3ff, type: 3}
+  audioClipWall: {fileID: 8300000, guid: 7a7a0f84ce0cb4540ab2657ef665afa8, type: 3}
 --- !u!1 &1563716585
 GameObject:
   m_ObjectHideFlags: 0

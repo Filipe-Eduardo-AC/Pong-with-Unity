@@ -14,11 +14,16 @@ public class BallMovement : MonoBehaviour
         LaunchBall();
     }
 
-    private void LaunchBall()
+    public void LaunchBall()
     {
         float randomDirectionX = Random.Range(0, 2) == 0 ? -1 : 1;
         float randomDirectionY = Random.Range(0, 2) == 0 ? -1 : 1;
         rb.velocity = new Vector2(speed * randomDirectionX, speed * randomDirectionY);
+    }
+
+    public void Reset()
+    {
+        gameObject.transform.position = Vector3.zero;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

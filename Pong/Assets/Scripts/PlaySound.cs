@@ -9,6 +9,8 @@ public class PlaySound : MonoBehaviour
     private AudioClip audioClipRacket;
     [SerializeField]
     private AudioClip audioClipWall;
+    [SerializeField]
+    private AudioClip audioClipPoint;
     private AudioSource audioSource;
 
     private void Start()
@@ -28,6 +30,10 @@ public class PlaySound : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        HitPointSFX();
+    }
 
     private void HitRacketSFX()
     {
@@ -37,5 +43,10 @@ public class PlaySound : MonoBehaviour
     private void HitWallSFX()
     {
         audioSource.PlayOneShot(audioClipWall);
+    }
+
+    private void HitPointSFX()
+    {
+        audioSource.PlayOneShot(audioClipPoint);
     }
 }

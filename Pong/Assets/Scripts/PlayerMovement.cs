@@ -22,4 +22,9 @@ public class PlayerMovement : MonoBehaviour
             transform.position -= new Vector3(0f, speed * Time.deltaTime, 0f);
         }
     }
+
+    public void Reset()
+    {
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, 0, 0);
+    }
 }

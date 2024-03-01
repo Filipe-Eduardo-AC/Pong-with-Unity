@@ -17,4 +17,15 @@ public class CanvaEndMatch : MonoBehaviour
     {
         this.canvas.gameObject.SetActive(false);
     }
+
+    //criar botão que reinicia a partida após fim
+
+    //public void RestartGame()
+    //{
+    //    this.canvaEndMatch.Hide();
+    //    Time.timeScale = 1;
+    //    this.ball.Reset();
+    //    this.score.Reset();
+    //    this.player.Reset();
+    //}
 }

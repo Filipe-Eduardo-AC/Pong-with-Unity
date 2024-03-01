@@ -14,16 +14,13 @@ public class CanvaMenu : MonoBehaviour
     private void Awake()
     {
         this.canvas = this.GetComponent<Canvas>();
-    }
-
-    public void Show(Camera camera)
-    {
-        this.background.SetActive(true);
-        this.canvas.worldCamera = camera;
+        Time.timeScale = 0;
     }
 
     public void Vanish()
     {
         this.background.SetActive(false);
     }
+
+    //apertar botão usar vanish e startar
 }

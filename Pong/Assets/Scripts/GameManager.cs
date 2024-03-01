@@ -17,11 +17,7 @@ public class GameManager : MonoBehaviour
         this.player = Object.FindFirstObjectByType(typeof(PlayerMovement)) as PlayerMovement;
     }
 
-    public void EndGame()
-    {
-        Time.timeScale = 0;
-        this.canvaEndMatch.Show();
-    }
+    
 
     public virtual void RestartGame()
     {

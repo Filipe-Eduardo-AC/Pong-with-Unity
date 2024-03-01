@@ -6,21 +6,15 @@ using UnityEngine.UI;
 public class CanvaEndMatch : MonoBehaviour
 {
     [SerializeField]
-    private Text endText;
-    private CanvaScore score;
-
-    private void Start()
-    {
-        this.score = Object.FindFirstObjectByType(typeof(CanvaScore)) as CanvaScore;
-    }
+    private Canvas canvas;
 
     public void Show()
     {
-        this.endText.gameObject.SetActive(true);
+        this.canvas.gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        this.endText.gameObject.SetActive(false);
+        this.canvas.gameObject.SetActive(false);
     }
 }

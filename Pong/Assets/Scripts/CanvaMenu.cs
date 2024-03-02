@@ -8,12 +8,10 @@ public class CanvaMenu : MonoBehaviour
     [SerializeField]
     private GameObject background;
     [SerializeField]
-    private Text text;
     private Canvas canvas;
 
     private void Awake()
     {
-        this.canvas = this.GetComponent<Canvas>();
         Time.timeScale = 0;
     }
 
@@ -22,5 +20,15 @@ public class CanvaMenu : MonoBehaviour
         this.background.SetActive(false);
     }
 
-    //apertar botão usar vanish e startar
+    public void StartGame()
+    {
+        StartCoroutine(WaitStart());
+    }
+
+    private IEnumerator WaitStart()
+    {
+        Vanish();
+        yield return new WaitForSecondsRealtime(3);
+        Time.timeScale = 1;
+    }
 }

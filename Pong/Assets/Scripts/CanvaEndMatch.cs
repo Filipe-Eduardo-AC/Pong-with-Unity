@@ -6,26 +6,26 @@ using UnityEngine.UI;
 public class CanvaEndMatch : MonoBehaviour
 {
     [SerializeField]
-    private Canvas canvas;
+    private Canvas canvaEnd;
+    [SerializeField]
+    private CanvaMenu canvaMenu;
+    [SerializeField]
+    private CanvaScore canvaScore;
 
     public void Show()
     {
-        this.canvas.gameObject.SetActive(true);
+        this.canvaEnd.gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        this.canvas.gameObject.SetActive(false);
+        this.canvaEnd.gameObject.SetActive(false);
     }
 
-    //criar botão que reinicia a partida após fim
-
-    //public void RestartGame()
-    //{
-    //    this.canvaEndMatch.Hide();
-    //    Time.timeScale = 1;
-    //    this.ball.Reset();
-    //    this.score.Reset();
-    //    this.player.Reset();
-    //}
+    public void RestartGame()
+    {
+        Hide();
+        this.canvaScore.ResetScore();
+        this.canvaMenu.StartGame();
+    }
 }

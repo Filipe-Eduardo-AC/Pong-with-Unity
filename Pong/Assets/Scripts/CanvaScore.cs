@@ -37,7 +37,7 @@ public class CanvaScore : MonoBehaviour
         this.goalsTaken.text = this.Points.ToString();
     }
 
-    public void Reset()
+    public void ResetScore()
     {
         this.Points = 0;
         this.goalsTaken.text = this.Points.ToString();
@@ -51,7 +51,7 @@ public class CanvaScore : MonoBehaviour
         this.player1.Reset();
         this.player2.Reset();
 
-        if (Points >= 3)
+        if (Points >= 1)
         {
             EndGame();
             WinnerText();

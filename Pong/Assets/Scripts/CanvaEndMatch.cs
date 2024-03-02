@@ -10,7 +10,9 @@ public class CanvaEndMatch : MonoBehaviour
     [SerializeField]
     private CanvaMenu canvaMenu;
     [SerializeField]
-    private CanvaScore canvaScore;
+    private CanvaScore goal1;
+    [SerializeField]
+    private CanvaScore goal2;
 
     public void Show()
     {
@@ -25,7 +27,8 @@ public class CanvaEndMatch : MonoBehaviour
     public void RestartGame()
     {
         Hide();
-        this.canvaScore.ResetScore();
+        this.goal1.ResetScore();
+        this.goal2.ResetScore();
         this.canvaMenu.StartGame();
     }
 }

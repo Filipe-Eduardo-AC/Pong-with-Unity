@@ -51,7 +51,7 @@ public class CanvaScore : MonoBehaviour
         this.player1.Reset();
         this.player2.Reset();
 
-        if (Points >= 1)
+        if (Points >= 3)
         {
             EndGame();
             WinnerText();

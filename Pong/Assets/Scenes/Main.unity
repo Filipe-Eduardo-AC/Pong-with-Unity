@@ -236,10 +236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvaEnd: {fileID: 72742721}
   canvaMenu: {fileID: 1604004658}
-  player1: {fileID: 610885793}
-  player2: {fileID: 1612284878}
-  player1Score: {fileID: 1178556277}
-  player2Score: {fileID: 472374928}
+  goal1: {fileID: 627850000}
+  goal2: {fileID: 178113074}
 --- !u!1 &78771659
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,9 +635,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1499543956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -111, y: 219}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -111, y: -99}
   m_SizeDelta: {x: 85.3287, y: 162.6583}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472374928
@@ -1660,9 +1658,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1499543956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 111, y: 219.00002}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 111, y: -98.999985}
   m_SizeDelta: {x: 85.3287, y: 162.6583}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1178556277
